@@ -17,8 +17,8 @@ Weather Dashboard adalah aplikasi web yang memungkinkan pengguna mencari dan mel
 - **OpenWeatherMap API**: Sumber data cuaca.
 
 ## 📂 Struktur Proyek
-
-```Weather_Dashboard/
+```
+Weather_Dashboard/
 ├── index.html 
 ├── style.css 
 ├── script.js 
