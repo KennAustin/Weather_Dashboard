@@ -18,15 +18,7 @@ Weather Dashboard adalah aplikasi web yang memungkinkan pengguna mencari dan mel
 
 ## 📂 Struktur Proyek
 
-Weather_Dashboard/
-
-├── index.html 
-
-├── style.css 
-
-├── script.js 
-
-└── README.md
+Weather_Dashboard/├── index.html ├── style.css ├── script.js └── README.md
 
 ## 🔧 Cara Menggunakan
 
