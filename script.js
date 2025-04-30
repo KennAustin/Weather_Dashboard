@@ -61,15 +61,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 unit = 'imperial';
                 fahrenheitBtn.classList.add('active');
                 celsiusBtn.classList.remove('active');
-                // Refresh current display with new units
                 if (currentCity.textContent !== 'Search for a city') {
                     fetchWeather(currentCity.textContent);
                 }
             }
         });
     }
-
-    // Handle search
+    
     function handleSearch() {
         const city = cityInput.value.trim();
         if (city) {
@@ -81,33 +79,27 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fetch weather data from API
     async function fetchWeather(city) {
         try {
-            // Show loading state
             currentCity.textContent = 'Loading...';
             currentIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
 
-            // Fetch current weather
             const currentResponse = await fetch(
                 `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${API_KEY}`
             );
-
+            
             if (!currentResponse.ok) {
                 throw new Error('City not found');
             }
 
             const currentData = await currentResponse.json();
-
-            // Fetch forecast
             const forecastResponse = await fetch(
                 `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&appid=${API_KEY}`
             );
 
             const forecastData = await forecastResponse.json();
 
-            // Process and display data
             displayCurrentWeather(currentData);
             displayForecast(forecastData);
 
-            // Add to search history
             addToSearchHistory(city);
 
         } catch (error) {
@@ -209,8 +201,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Save to localStorage
         localStorage.setItem('weatherSearchHistory', JSON.stringify(searchHistory));
-
-        // Update UI
         renderSearchHistory();
     }
 
@@ -226,7 +216,6 @@ document.addEventListener('DOMContentLoaded', function () {
             historyList.appendChild(historyItem);
         });
     }
-
-    // Initialize the app
+    
     init();
 });
