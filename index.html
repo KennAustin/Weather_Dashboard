@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard | Portofolio Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Weather Dashboard</h1>
+            <p>Get current weather and 5-day forecast for any city</p>
+        </header>
+
+        <div class="app-container">
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" id="cityInput" placeholder="Enter city name...">
+                    <button id="searchBtn"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div class="unit-toggle">
+                    <span>Units:</span>
+                    <button id="celsiusBtn" class="active">°C</button>
+                    <button id="fahrenheitBtn">°F</button>
+                </div>
+            </div>
+
+            <div class="current-weather" id="currentWeather">
+                <div class="weather-card">
+                    <div class="weather-info">
+                        <h2 id="currentCity">Search for a city</h2>
+                        <div class="weather-main">
+                            <div id="currentIcon" class="weather-icon">
+                                <i class="fas fa-search-location"></i>
+                            </div>
+                            <div class="weather-temp">
+                                <span id="currentTemp">--</span>
+                                <span id="currentUnit">°C</span>
+                            </div>
+                        </div>
+                        <div id="currentDesc" class="weather-desc">Enter a city to see weather</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <i class="fas fa-temperature-high"></i>
+                            <span>Feels like: <span id="currentFeelsLike">--</span>°</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tint"></i>
+                            <span>Humidity: <span id="currentHumidity">--</span>%</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind: <span id="currentWind">--</span> km/h</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-compress-alt"></i>
+                            <span>Pressure: <span id="currentPressure">--</span> hPa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-cards" id="forecastCards">
+                    <div class="forecast-empty">
+                        <i class="fas fa-cloud-sun"></i>
+                        <p>Search for a city to see 5-day forecast</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-history">
+                <h3>Search History</h3>
+                <div class="history-list" id="historyList">
+                    <!-- History items will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
